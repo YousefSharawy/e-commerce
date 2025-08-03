@@ -1,6 +1,6 @@
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:e_commerce/core/resources/assets_manager.dart';
-import 'package:e_commerce/feature/auth/login/login_screen.dart';
+import 'package:e_commerce/feature/auth/representation/screens/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 

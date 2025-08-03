@@ -1,9 +1,24 @@
+import 'package:bloc/bloc.dart';
+import 'package:e_commerce/core/di/service_locator.dart';
 import 'package:e_commerce/core/routes/route_generator.dart';
 import 'package:e_commerce/core/routes/routes.dart';
-import 'package:e_commerce/splash_screen.dart';
+import 'package:e_commerce/core/shared/bloc_observer.dart';
+import 'package:e_commerce/feature/auth/representation/cubit/auth_cubit.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Bloc.observer = AppBlocObserver();
+  configureDependancies();
+
+  await Supabase.initialize(
+    url: 'https://didwczdonjooxreebyxs.supabase.co',
+    anonKey:
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRpZHdjemRvbmpvb3hyZWVieXhzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQwNjEyNjIsImV4cCI6MjA2OTYzNzI2Mn0.j9JZbr42ZElLm72kjgxdQhxE3crYK3JC1sZ-EubkdkU',
+  );
   runApp(const Ecommerce());
 }
 
@@ -12,13 +27,21 @@ class Ecommerce extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: Routes.splashScreen,
-      onGenerateRoute: RouteGenerator.getRoute,
+    return MultiBlocProvider(
+      providers: [BlocProvider(create: (_) => getIt.get<AuthCubit>())],
+      child: ScreenUtilInit(
+        minTextAdapt: true,
+        splitScreenMode: true,
+        designSize: Size(375, 812),
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          initialRoute: Routes.splashScreen,
+          onGenerateRoute: RouteGenerator.getRoute,
 
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          ),
+        ),
       ),
     );
   }
