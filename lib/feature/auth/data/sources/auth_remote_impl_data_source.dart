@@ -79,12 +79,10 @@ class AuthRemoteImplDataSource implements AuthRemoteDataSource {
       final response = await Supabase.instance.client.auth.signUp(
         email: email,
         password: password,
-        data: {'name': name,
-        },
+        data: {'name': name},
       );
 
       final userId = response.user!.id;
-
 
       await Supabase.instance.client.from('users').insert({
         'id': userId,

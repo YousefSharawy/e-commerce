@@ -40,17 +40,14 @@ class _CustomeTextFieldState extends State<CustomeTextField> {
         color: ColorManager.white,
       ),
       child: TextFormField(
-        
         textAlign: TextAlign.start,
         style: TextStyle(color: ColorManager.black),
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.only(left: 20.w,top: 14.h),
+          contentPadding: EdgeInsets.only(left: 20.w, top: 14.h),
           label: widget.label,
-          
-         
+
           errorBorder: UnderlineInputBorder(
-            
-            borderSide: BorderSide( width: 0.w, color: ColorManager.transparent),
+            borderSide: BorderSide(width: 0.w, color: ColorManager.transparent),
           ),
           focusedBorder: UnderlineInputBorder(
             borderSide: BorderSide(width: 0.w, color: ColorManager.transparent),
@@ -72,7 +69,7 @@ class _CustomeTextFieldState extends State<CustomeTextField> {
                     isObsecure
                         ? Icons.visibility_outlined
                         : Icons.visibility_off_outlined,
-                        color: ColorManager.gray,
+                    color: ColorManager.gray,
                   ),
                 )
               : null,

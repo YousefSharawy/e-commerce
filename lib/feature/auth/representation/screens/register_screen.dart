@@ -27,7 +27,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   TextEditingController nameEditingController = TextEditingController();
 
   final formKey = GlobalKey<FormState>();
-@override
+  @override
   void dispose() {
     // Dispose controllers when the widget is destroyed
     emailEditingController.dispose();
@@ -51,7 +51,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
           UiUtils.hideLoading(context);
           UiUtils.showMessage(state.message);
           clearControllers();
-          
         } else if (state is RegisterLoading) {
           UiUtils.showLoading(context);
         } else if (state is RegisterSuccess) {
@@ -153,7 +152,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   onButtonPressed: userRegister,
                   label: 'SIGN UP',
                 ),
-                
               ],
             ),
           ),

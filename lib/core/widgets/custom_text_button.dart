@@ -23,7 +23,13 @@ class CustomTextButton extends StatelessWidget {
           elevation: 3,
         ),
         onPressed: onButtonPressed,
-        child: Text(label, style: TextStyle(color: ColorManager.white,fontSize: FontSizeManager.s14)),
+        child: Text(
+          label,
+          style: TextStyle(
+            color: ColorManager.white,
+            fontSize: FontSizeManager.s14,
+          ),
+        ),
       ),
     );
   }

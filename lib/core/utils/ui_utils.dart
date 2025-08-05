@@ -8,16 +8,13 @@ class UiUtils {
   static void hideLoading(BuildContext context) => Navigator.of(context).pop();
   static void showMessage(String message) =>
       Fluttertoast.showToast(msg: message, toastLength: Toast.LENGTH_SHORT);
-      static void showLoading(BuildContext context) {
+  static void showLoading(BuildContext context) {
     Future.delayed(Duration.zero, () {
       showDialog(
         context: context,
         barrierDismissible: false,
-        builder: (_) => Lottie.asset(
-          height: 100.h,
-          width: 100.w,
-          AssetsManager.loading,
-        ),
+        builder: (_) =>
+            Lottie.asset(height: 100.h, width: 100.w, AssetsManager.loading),
       );
     });
   }

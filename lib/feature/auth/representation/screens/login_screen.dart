@@ -36,8 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
   void clearControllers() {
     emailEditingController.clear();
     passwordEditingController.clear();
-        formKey.currentState?.reset();
-
+    formKey.currentState?.reset();
   }
 
   @override
@@ -46,7 +45,7 @@ class _LoginScreenState extends State<LoginScreen> {
       listener: (context, state) {
         if (state is LoginSuccessUser) {
           UiUtils.hideLoading(context);
-          Navigator.pushReplacementNamed(context, Routes.homeScreen);
+          Navigator.pushReplacementNamed(context, Routes.userScreens);
         } else if (state is LoginSuccessVendor) {
           UiUtils.hideLoading(context);
           Navigator.pushReplacementNamed(context, Routes.vendorHomeScreen);
@@ -151,7 +150,6 @@ class _LoginScreenState extends State<LoginScreen> {
                   SizedBox(height: 32.h),
 
                   CustomTextButton(onButtonPressed: login, label: 'LOGIN'),
-                  
                 ],
               ),
             ),

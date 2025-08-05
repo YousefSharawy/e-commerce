@@ -32,6 +32,4 @@ class UserModel {
       'authorization': authorization,
     };
   }
-
-  
 }
