@@ -5,6 +5,6 @@ class AdminHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(body: Center(child: Text("admin"),),);
+    return const Scaffold(body: Center(child: Text("admin")));
   }
 }

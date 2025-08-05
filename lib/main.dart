@@ -1,9 +1,10 @@
-import 'package:bloc/bloc.dart';
 import 'package:e_commerce/core/di/service_locator.dart';
 import 'package:e_commerce/core/routes/route_generator.dart';
 import 'package:e_commerce/core/routes/routes.dart';
+import 'package:e_commerce/core/shared/app_theme.dart';
 import 'package:e_commerce/core/shared/bloc_observer.dart';
 import 'package:e_commerce/feature/auth/representation/cubit/auth_cubit.dart';
+import 'package:e_commerce/feature/users/feature/products/representation/cubit/product_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -28,7 +29,9 @@ class Ecommerce extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
-      providers: [BlocProvider(create: (_) => getIt.get<AuthCubit>())],
+      providers: [BlocProvider(create: (_) => getIt.get<AuthCubit>()),
+      BlocProvider(create: (_) => getIt.get<ProductCubit>()),
+      ],
       child: ScreenUtilInit(
         minTextAdapt: true,
         splitScreenMode: true,
@@ -37,10 +40,8 @@ class Ecommerce extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           initialRoute: Routes.splashScreen,
           onGenerateRoute: RouteGenerator.getRoute,
-
-          theme: ThemeData(
-            colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          ),
+          theme: AppTheme.lightTheme,
+          
         ),
       ),
     );

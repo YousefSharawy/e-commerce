@@ -9,7 +9,6 @@ class Login {
   final AuthRepository authRepository;
   Login(this.authRepository);
 
-  Future <Either<Failure,UserEntity>> call(String email,String password) =>
-  authRepository.login(email, password);
-
+  Future<Either<Failure, UserEntity>> call(String email, String password) =>
+      authRepository.login(email, password);
 }

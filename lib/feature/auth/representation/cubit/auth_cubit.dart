@@ -26,14 +26,14 @@ class AuthCubit extends Cubit<AuthStates> {
         if (user.authorization == "user") {
           emit(LoginSuccessUser());
         } else if (user.authorization == "vendor") {
-          if(user.status!="approved"){
+          if (user.status != "approved") {
             emit(LoginError("Vendor hasn't been approved yet"));
-            return ;
+            return;
           }
           emit(LoginSuccessVendor());
         } else if (user.authorization == "admin") {
           emit(LoginSuccessAdmin());
-        } 
+        }
       },
     );
   }

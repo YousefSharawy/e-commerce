@@ -3,15 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomContainer extends StatelessWidget {
-   CustomContainer({super.key,required this.assetName});
-  String assetName ;
+  CustomContainer({super.key, required this.assetName});
+  String assetName;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-      color: ColorManager.white,
-        borderRadius: BorderRadius.circular(20.r)
+        color: ColorManager.white,
+        borderRadius: BorderRadius.circular(20.r),
       ),
       height: 64.h,
       width: 92.w,
