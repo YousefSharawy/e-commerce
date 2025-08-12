@@ -10,6 +10,6 @@ extension ProductMapper on ProductModel {
     description: description,
     category: category,
     image: image,
-    rating: rating.toEntity,
+    rating: rating.toEntity, 
   );
 }

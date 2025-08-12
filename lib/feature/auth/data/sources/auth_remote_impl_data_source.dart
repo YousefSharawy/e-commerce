@@ -106,4 +106,19 @@ class AuthRemoteImplDataSource implements AuthRemoteDataSource {
       throw RemoteException(message ?? "Failed to register as vendor");
     }
   }
+
+  @override
+  Future<void> logout() async {
+    try {
+      await Supabase.instance.client.auth.signOut();
+    } catch (exception) {
+      String? message;
+      if (exception is PostgrestException) {
+        message = exception.message;
+      } else if (exception is AuthException) {
+        message = exception.message;
+      }
+      throw RemoteException(message ?? "Failed to log out");
+    }
+  }
 }

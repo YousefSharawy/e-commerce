@@ -30,6 +30,29 @@ class ProductModel {
       rating: RatingModel.fromJson(json['rating'] as Map<String, dynamic>),
     );
   }
+  factory ProductModel.fromSupabase(Map<String, dynamic> json) {
+    return ProductModel(
+      id: json['id'] as int,
+      title: json['title'] as String,
+      price: (json['price'] as num).toDouble(),
+      description: json['description'] as String,
+      category: json['category'] as String,
+      image: json['image'] as String,
+      rating: json['rating'] != null 
+        ? RatingModel.fromSupabase(json['rating'] as Map<String, dynamic>)
+        : const RatingModel(rate: 0.0, count: 0), // Default rating if null
+    );
+  }
 
- 
+  Map<String, dynamic> toJson() {
+    return {
+      'id': id,
+      'title': title,
+      'price': price,
+      'description': description,
+      'category': category,
+      'image': image,
+      'rating': rating.toJson(),
+    };
+  }
 }

@@ -10,5 +10,6 @@ class GetProducts {
 
   GetProducts({required this.productRepository});
 
-  Future<Either<Failure, List<Products>>> call () => productRepository.getProducts();
+  Future<Either<Failure, List<Products>>> call() =>
+      productRepository.getProducts();
 }
