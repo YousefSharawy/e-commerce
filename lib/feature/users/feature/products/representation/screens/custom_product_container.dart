@@ -9,10 +9,10 @@ class CustomProductContainer extends StatelessWidget {
     required this.price,
     required this.image,
     required this.title,
-    this.count=0,
-    this.rate=0,
-    this.id=0,
-    this.description="",
+    this.count = 0,
+    this.rate = 0,
+    this.id = 0,
+    this.description = "",
     super.key,
   });
   String image;
@@ -23,14 +23,12 @@ class CustomProductContainer extends StatelessWidget {
   int count;
   int rate;
 
-
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
         color: ColorManager.white,
         boxShadow: [
-         
           BoxShadow(
             color: ColorManager.gray.withOpacity(0.5),
             spreadRadius: 2.r,

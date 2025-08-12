@@ -5,6 +5,12 @@ class InitState implements AuthStates {}
 class LoginLoading implements AuthStates {}
 
 class RegisterLoading implements AuthStates {}
+class LogoutLoading implements AuthStates {}
+class LogoutSuccess implements AuthStates {}
+class LogoutError implements AuthStates {
+  String message ; 
+  LogoutError(this.message);
+}
 
 // Replace single LoginSuccess with role-specific success states
 class LoginSuccessUser implements AuthStates {}

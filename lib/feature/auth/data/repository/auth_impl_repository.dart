@@ -52,4 +52,15 @@ class AuthImplRepository implements AuthRepository {
       return Left(Failure(exception.message));
     }
   }
+  
+  @override
+  Future<Either<Failure, void>> logout()async {
+    try {
+      await authRemoteDataSource.logout();
+      return Right(null);
+    } on RemoteException catch (exception) {
+      return Left(Failure(exception.message));
+      
+    }
+  }
 }

@@ -8,4 +8,14 @@ class RatingModel {
     rate: (json['rate'] as num).toDouble(),
     count: json['count'] as int,
   );
+  factory RatingModel.fromSupabase(Map<String, dynamic> json) => RatingModel(
+    rate: (json['rate'] as num).toDouble(),
+    count: json['count'] as int,
+  );
+  Map<String, dynamic> toJson() {
+  return {
+    'rate': rate,
+    'count': count,
+  };
+}
 }
