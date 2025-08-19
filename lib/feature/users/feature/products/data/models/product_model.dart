@@ -1,12 +1,24 @@
+
+import 'package:equatable/equatable.dart';
+import 'package:hive/hive.dart';
+
 import 'rating_model.dart';
 
-class ProductModel {
+part 'product_model.g.dart';
+
+@HiveType(typeId: 0)
+class ProductModel extends Equatable {
   final int id;
+  @HiveField(1)
   final String title;
+  @HiveField(2)
   final double price;
+  @HiveField(3)
   final String description;
   final String category;
+  @HiveField(5)
   final String image;
+  @HiveField(6)
   final RatingModel rating;
 
   const ProductModel({
@@ -55,4 +67,7 @@ class ProductModel {
       'rating': rating.toJson(),
     };
   }
+
+  @override
+  List<Object?> get props => [id, title, price, description, category, image, rating];
 }

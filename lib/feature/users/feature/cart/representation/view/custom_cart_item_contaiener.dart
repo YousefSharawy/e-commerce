@@ -8,7 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomCartItemContaiener extends StatelessWidget {
-  CustomCartItemContaiener({
+  const CustomCartItemContaiener({
     required this.price,
     required this.image,
     required this.title,

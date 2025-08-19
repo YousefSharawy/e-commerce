@@ -1,4 +1,4 @@
-import 'package:e_commerce/feature/users/feature/products/data/models/products_model.dart';
+import 'package:e_commerce/feature/users/feature/products/data/models/product_model.dart';
 
 class CartItemModel {
   final String id;

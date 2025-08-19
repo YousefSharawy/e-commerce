@@ -4,7 +4,7 @@ import 'package:e_commerce/core/shared/api_constatnt.dart';
 import 'package:e_commerce/feature/users/feature/cart/data/models/cart_item_model.dart';
 import 'package:e_commerce/feature/users/feature/cart/data/models/cart_model.dart';
 import 'package:e_commerce/feature/users/feature/cart/data/source/cart_remote_data_source.dart';
-import 'package:e_commerce/feature/users/feature/products/data/models/products_model.dart';
+import 'package:e_commerce/feature/users/feature/products/data/models/product_model.dart';
 import 'package:injectable/injectable.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 

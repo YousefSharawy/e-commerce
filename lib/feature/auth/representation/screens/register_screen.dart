@@ -1,9 +1,7 @@
-import 'package:e_commerce/core/resources/assets_manager.dart';
 import 'package:e_commerce/core/resources/color_manager.dart';
 import 'package:e_commerce/core/resources/font_manager.dart';
 import 'package:e_commerce/core/utils/app_validator.dart';
 import 'package:e_commerce/core/utils/ui_utils.dart';
-import 'package:e_commerce/core/widgets/custom_container.dart';
 import 'package:e_commerce/core/widgets/custom_text_button.dart';
 import 'package:e_commerce/core/widgets/custome_text_field.dart';
 import 'package:e_commerce/feature/auth/representation/cubit/auth_cubit.dart';
@@ -13,7 +11,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class RegisterScreen extends StatefulWidget {
-  RegisterScreen({super.key});
+  const RegisterScreen({super.key});
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();

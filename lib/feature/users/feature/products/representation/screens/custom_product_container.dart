@@ -1,11 +1,10 @@
-import 'package:e_commerce/core/resources/assets_manager.dart';
 import 'package:e_commerce/core/resources/color_manager.dart';
 import 'package:e_commerce/core/resources/font_manager.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomProductContainer extends StatelessWidget {
-  CustomProductContainer({
+  const CustomProductContainer({
     required this.price,
     required this.image,
     required this.title,
@@ -15,13 +14,13 @@ class CustomProductContainer extends StatelessWidget {
     this.description = "",
     super.key,
   });
-  String image;
-  String title;
-  String description;
-  double price;
-  int id;
-  int count;
-  int rate;
+ final String image;
+ final String title;
+ final String description;
+ final double price;
+ final int id;
+ final int count;
+ final int rate;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +62,7 @@ class CustomProductContainer extends StatelessWidget {
                         ),
                       ),
                       SizedBox(height: 5.h),
-                      Text("${price}\$"),
+                      Text("$price\$"),
                     ],
                   ),
                 ),

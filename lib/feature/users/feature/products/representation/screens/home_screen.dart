@@ -5,7 +5,6 @@ import 'package:e_commerce/feature/users/feature/products/representation/cubit/p
 import 'package:e_commerce/feature/users/feature/products/representation/cubit/product_states.dart';
 import 'package:e_commerce/feature/users/feature/products/representation/screens/custom_product_container.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeScreen extends StatefulWidget {

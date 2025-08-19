@@ -3,6 +3,7 @@ import 'package:e_commerce/core/routes/route_generator.dart';
 import 'package:e_commerce/core/routes/routes.dart';
 import 'package:e_commerce/core/shared/app_theme.dart';
 import 'package:e_commerce/core/shared/bloc_observer.dart';
+import 'package:e_commerce/feature/admin/representation/cubit/admin_cubit.dart';
 import 'package:e_commerce/feature/auth/representation/cubit/auth_cubit.dart';
 import 'package:e_commerce/feature/users/feature/cart/representation/cubit/cart_cubit.dart';
 import 'package:e_commerce/feature/users/feature/products/representation/cubit/product_cubit.dart';
@@ -35,6 +36,7 @@ class Ecommerce extends StatelessWidget {
         BlocProvider(create: (_) => getIt.get<AuthCubit>()),
         BlocProvider(create: (_) => getIt.get<ProductCubit>()),
         BlocProvider(create: (_) => getIt.get<CartCubit>(),),
+        BlocProvider(create: (_) => getIt.get<AdminCubit>(),),
       ],
       child: ScreenUtilInit(
         minTextAdapt: true,
