@@ -8,7 +8,7 @@ import 'package:e_commerce/splash_screen.dart';
 import 'package:e_commerce/feature/users/feature/products/representation/screens/home_screen.dart';
 import 'package:e_commerce/feature/vendors/vendor_home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:e_commerce/feature/admin/admin_home_screen.dart';
+import 'package:e_commerce/feature/admin/representation/screens/admin_home_screen.dart';
 
 class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {

@@ -58,12 +58,9 @@ class AuthRemoteImplDataSource implements AuthRemoteDataSource {
         message = exception.message;
       } else if (exception is AuthException) {
         message = exception.message;
-        print('AuthException details: $exception');
       } else if (exception is RemoteException) {
         message = exception.message;
-      } else {
-        message = exception.toString();
-      }
+      } 
 
       throw RemoteException(message ?? "Failed to Register");
     }
@@ -99,9 +96,7 @@ class AuthRemoteImplDataSource implements AuthRemoteDataSource {
         message = exception.message;
       } else if (exception is RemoteException) {
         message = exception.message;
-      } else {
-        message = exception.toString();
-      }
+      } 
 
       throw RemoteException(message ?? "Failed to register as vendor");
     }

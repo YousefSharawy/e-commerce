@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomeTextField extends StatefulWidget {
-  TextEditingController textEditingController;
-  bool isPassword;
-  Widget label;
-  String? Function(String?)? validator;
+ final TextEditingController textEditingController;
+ final bool isPassword;
+ final Widget label;
+ final String? Function(String?)? validator;
 
-  CustomeTextField({
+  const CustomeTextField({super.key, 
     required this.label,
     required this.textEditingController,
     required this.validator,

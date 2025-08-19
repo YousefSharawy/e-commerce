@@ -1,6 +1,7 @@
 import 'package:e_commerce/feature/users/feature/products/domain/entities/rating.dart';
+import 'package:equatable/equatable.dart';
 
-class Products {
+class Products extends Equatable {
   final int id;
   final String title;
   final double price;
@@ -18,4 +19,6 @@ class Products {
     required this.image,
     required this.rating,
   });
+  @override
+  List<Object?> get props => [id];
 }

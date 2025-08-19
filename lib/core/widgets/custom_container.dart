@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomContainer extends StatelessWidget {
-  CustomContainer({super.key, required this.assetName});
-  String assetName;
+  const CustomContainer({super.key, required this.assetName});
+  final String assetName;
 
   @override
   Widget build(BuildContext context) {
