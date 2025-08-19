@@ -1,8 +1,9 @@
-import 'package:e_commerce/core/resources/assets_manager.dart';
 import 'package:e_commerce/core/resources/color_manager.dart';
 import 'package:e_commerce/core/resources/font_manager.dart';
 import 'package:e_commerce/core/utils/ui_utils.dart';
 import 'package:e_commerce/core/widgets/custom_text_button.dart';
+import 'package:e_commerce/feature/users/feature/cart/representation/cubit/cart_cubit.dart';
+import 'package:e_commerce/feature/users/feature/cart/representation/cubit/cart_states.dart';
 import 'package:e_commerce/feature/users/feature/products/representation/cubit/product_cubit.dart';
 import 'package:e_commerce/feature/users/feature/products/representation/cubit/product_states.dart';
 import 'package:flutter/material.dart';
@@ -66,7 +67,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.35.h,
                 width: double.infinity,
-                child: Image.network(product?.image ?? "", fit: BoxFit.contain),
+                child: product?.image == null
+                    ? SizedBox()
+                    : Image.network(product?.image ?? "", fit: BoxFit.contain),
               ),
               SizedBox(height: 20.h),
               Expanded(
@@ -84,7 +87,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         ),
                       ),
                       SizedBox(height: 20.h),
-                  
+
                       Expanded(
                         child: Text(
                           product?.description ?? "",
@@ -98,11 +101,11 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         ),
                       ),
                       SizedBox(height: 20.h),
-                  
+
                       Align(
                         alignment: Alignment.centerRight,
                         child: Text(
-                          "${product?.rating.rate ?? 0 }/5⭐",
+                          "${product?.rating.rate ?? 0}/5⭐",
                           style: TextStyle(
                             color: ColorManager.black,
                             fontSize: FontSizeManager.s14,
@@ -111,10 +114,29 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                         ),
                       ),
                       SizedBox(height: 20.h),
-                  
-                      CustomTextButton(
-                        onButtonPressed: () {},
-                        label: 'Add to Cart',
+
+                      BlocListener<CartCubit, CartStates>(
+                        listener: (context, state) {
+                          if (state is AddProductSuccess) {
+                            UiUtils.hideLoading(context);
+                          } else if (state is AddProductError) {
+                            UiUtils.hideLoading(context);
+                            UiUtils.showMessage(state.message);
+                          } else if (state is AddProductLoading) {
+                            UiUtils.showLoading(context);
+                          }
+                        },
+                        child: CustomTextButton(
+                          onButtonPressed: () async {
+                            await BlocProvider.of<CartCubit>(
+                              context,
+                            ).addNewCart();
+                            await BlocProvider.of<CartCubit>(
+                              context,
+                            ).addCartItem(product?.id ?? 1, 1);
+                          },
+                          label: 'Add to Cart',
+                        ),
                       ),
                     ],
                   ),

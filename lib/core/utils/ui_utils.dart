@@ -5,7 +5,12 @@ import 'package:fluttertoast/fluttertoast.dart';
 import 'package:lottie/lottie.dart';
 
 class UiUtils {
-  static void hideLoading(BuildContext context) => Navigator.of(context).pop();
+  static void hideLoading(BuildContext context) {
+    if (Navigator.of(context).canPop()) {
+      Navigator.of(context).pop();
+    }
+  }
+
   static void showMessage(String message) =>
       Fluttertoast.showToast(msg: message, toastLength: Toast.LENGTH_SHORT);
   static void showLoading(BuildContext context) {

@@ -8,7 +8,7 @@ import 'package:e_commerce/splash_screen.dart';
 import 'package:e_commerce/feature/users/feature/products/representation/screens/home_screen.dart';
 import 'package:e_commerce/feature/vendors/vendor_home_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:e_commerce/feature/admin/admin_home_screen.dart'; 
+import 'package:e_commerce/feature/admin/representation/screens/admin_home_screen.dart';
 
 class RouteGenerator {
   static Route<dynamic> getRoute(RouteSettings settings) {
@@ -22,7 +22,10 @@ class RouteGenerator {
       case Routes.vendorRegisterScreen:
         return MaterialPageRoute(builder: (_) => VendorRegisterScreen());
       case Routes.userhomeScreen:
-        return MaterialPageRoute(builder: (_) => HomeScreen(),settings: settings);
+        return MaterialPageRoute(
+          builder: (_) => HomeScreen(),
+          settings: settings,
+        );
       case Routes.adminHomeScreen:
         return MaterialPageRoute(builder: (_) => AdminHomeScreen());
       case Routes.vendorHomeScreen:
@@ -30,7 +33,10 @@ class RouteGenerator {
       case Routes.userScreens:
         return MaterialPageRoute(builder: (_) => UserScreens());
       case Routes.productDetailsScreen:
-        return MaterialPageRoute(builder: (_) => ProductDetailsScreen(),settings: settings);
+        return MaterialPageRoute(
+          builder: (_) => ProductDetailsScreen(),
+          settings: settings,
+        );
 
       default:
         return MaterialPageRoute(builder: (_) => LoginScreen());

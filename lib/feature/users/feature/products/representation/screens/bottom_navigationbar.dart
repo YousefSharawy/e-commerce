@@ -1,5 +1,5 @@
 import 'package:e_commerce/core/resources/color_manager.dart';
-import 'package:e_commerce/feature/users/feature/products/representation/screens/cart_screen.dart';
+import 'package:e_commerce/feature/users/feature/cart/representation/view/cart_screen.dart';
 import 'package:e_commerce/feature/users/feature/products/representation/screens/home_screen.dart';
 import 'package:flutter/material.dart';
 

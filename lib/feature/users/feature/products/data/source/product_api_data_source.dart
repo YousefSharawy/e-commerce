@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:e_commerce/core/error/exceptions.dart';
 import 'package:e_commerce/core/shared/api_constatnt.dart';
-import 'package:e_commerce/feature/users/feature/products/data/models/products_model.dart';
+import 'package:e_commerce/feature/users/feature/products/data/models/product_model.dart';
 import 'package:e_commerce/feature/users/feature/products/data/source/product_data_source.dart';
 import 'package:injectable/injectable.dart';
 

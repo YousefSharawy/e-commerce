@@ -13,7 +13,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class VendorRegisterScreen extends StatefulWidget {
-  VendorRegisterScreen({super.key});
+  const VendorRegisterScreen({super.key});
 
   @override
   State<VendorRegisterScreen> createState() => _VendorRegisterScreenState();
