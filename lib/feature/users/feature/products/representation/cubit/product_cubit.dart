@@ -31,11 +31,9 @@ class ProductCubit extends Cubit<ProductStates> {
   Future<void> getSpecificProduct(int id) async {
     emit(GetProductsLoading());
     final result = await _getSpecificProduct(id);
-    result.fold(
-      (failure) => emit(GetProductError(failure.message)),
-      (prdouct)  {
-        product =prdouct;
-        emit(GetProductSuccess());},
-    );
+    result.fold((failure) => emit(GetProductError(failure.message)), (prdouct) {
+      product = prdouct;
+      emit(GetProductSuccess());
+    });
   }
 }

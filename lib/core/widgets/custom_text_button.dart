@@ -4,13 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomTextButton extends StatelessWidget {
-  CustomTextButton({
+  const CustomTextButton({
     super.key,
     required this.onButtonPressed,
     required this.label,
   });
   final VoidCallback onButtonPressed;
-  String label;
+  final String label;
 
   @override
   Widget build(BuildContext context) {
