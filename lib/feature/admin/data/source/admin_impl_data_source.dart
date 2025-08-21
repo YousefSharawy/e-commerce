@@ -14,7 +14,7 @@ class AdminImplDataSource implements AdminDataSource {
       final response = await Supabase.instance.client
           .from('users')
           .select('*')
-          .eq('authorization', 'vendor');
+          .eq('authorization', 'vendor').order('created_at', ascending: true);
 
       realtimeChannel = Supabase.instance.client
           .channel('vendors_channel')
